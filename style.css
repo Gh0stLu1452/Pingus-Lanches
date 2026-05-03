@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 header {
     background-color: #f5f1e6;
     color: white;
@@ -17,6 +22,7 @@ header .logo {
     height: 70px;
     width: auto;
     margin-left: 30px;
+    margin-top: 25px;
 }
 
 header nav ul {
@@ -30,7 +36,7 @@ header nav ul {
 }
 
 header h1{
-    font-size: 10px;
+        font-size: 10px;
 }
 
 .introducao {
@@ -52,13 +58,78 @@ header h1{
 .introducao-texto {
     color: rgb(255, 183, 50);
     position: absolute;
-    line-height: 4;
+    line-height: 1.5;
     font-size: 35px;
     z-index: 1;
     padding: 10px;
 }
 
-@media (max-width: 600px) {
+.introducao-texto h2 {
+    font-family: "Amatic SC", cursive;
+    font-size: 45px;
+}
+
+.separador {
+    height: 20px;
+    background-color: #f5f1e6;
+}
+
+.cardapio {
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f1e6;
+}
+
+.cardapio h2 {
+    margin-bottom: 20px;
+}
+
+.cardapio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 por linha */
+  gap: 40px;
+}
+
+
+.cardapio-item {
+  background: #111;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden; /* importante pra imagem respeitar borda */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.cardapio-item:hover {
+  transform: scale(1.03);
+}
+
+.cardapio-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* deixa a imagem bonita sem distorcer */
+}
+
+.cardapio-item h3 {
+  margin: 10px;
+}
+
+.cardapio-item p {
+  margin: 0 10px 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+footer {
+    background-color: #e9e0c9;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+@media (max-width: 1000px) {
     
 .introducao-imagem img{
     width: 100%;
@@ -71,20 +142,14 @@ header h1{
 .introducao-texto {
     color: rgb(255, 183, 50);
     position: absolute;
-    line-height: 2;
+    line-height: 1.5;
     font-size: 15px;
     z-index: 1;
     padding: 12px;
 }
-.cardapio-item {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 5px;
-    align-items: auto;
-}
-}
-.separador {
-    height: 20px;
-    background-color: #f5f1e6;
-}
 
+.cardapio-container {
+    grid-template-columns: repeat(2, 1fr); /* mantém 2 */
+    gap: 20px;
+}
+}
